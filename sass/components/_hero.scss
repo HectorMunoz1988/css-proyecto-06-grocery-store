@@ -1,0 +1,120 @@
+
+@use '../abstracts/variables' as v;
+
+.hero {
+    
+    .hero__content{
+
+        .hero__header {
+            position: relative;
+
+            img {
+                position: absolute;
+                top: -120px;
+                left: 30%;
+                width: 60%;
+                z-index: -1;
+            }
+
+            h1 {
+                margin-top: 78px;
+                max-width: 50%;
+                font-weight: 700; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+                font-size: 80px;
+                
+                span {
+                    color: v.$orange;
+                }
+
+            }
+
+            p {
+                margin-top: 16px;
+                max-width: 40%;
+                font-size: 24px;
+            }
+        }
+
+        aside {
+            display: flex;
+            align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline 
+
+            input {
+                background-color: rgb(#d0d0d2, 0.25);
+                width: 30%;
+                margin: 44px 0px;
+                border: 0px;
+                border-radius: 10px 0px 0px 10px; // top-left | top-right | bottom-right | bottom-left ▓ 5px | 0.5em | 10% | 50% 
+                padding: 17px 32px;
+                font-size: 18px;
+
+                &::placeholder {
+                    color: v.$grey;
+                    font-family: v.$primary-font;
+                }
+            }
+
+            button {
+                background-color: v.$orange;
+                border: 0px;
+                border-radius: 0px 10px 10px 0px; // top-left | top-right | bottom-right | bottom-left ▓ 5px | 0.5em | 10% | 50% 
+                padding: 14px 14px;
+                &:hover {
+                    cursor: pointer; // auto | default | pointer | text | wait | move | help | crosshair | not-allowed | progress | grab | grabbing | zoom-in | zoom-out | e-resize | w-resize | n-resize | s-resize | ne-resize | nw-resize | se-resize | sw-resize; 
+                    background-color: v.$yellow;
+                }
+                
+            }
+
+        }
+
+        .hero__list {
+
+            ul {
+                list-style: none; // elimina el marcador "•" de la lista 
+                display: grid;
+                width: 30%;
+                grid-template-columns: 1fr 1fr; // 200px 1fr 2fr auto 30% 
+                gap: 16px 32px;
+
+                li {
+                    font-size: 18px;
+                    position: relative;
+                    padding-left: 34px;
+
+                    &::before {
+                        content: ""; // → | ✓ | ✔ | ★ | • | › | » | ✕  | ✦ | ⚠️ | 🔥 | ⭐ | 📌 | ❗ | 🔒 | 🔓 | 🔔 | 🛠️ | 📝 | 📎 | 📊 | Texto 
+                        width: 24px; // 200px | 10em | 5rem | 75% 
+                        height: 24px;
+                        background-image: url("../../img/check-icon.svg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                    }                    
+                }
+            }
+        }
+    }
+
+    .articles {
+        margin-top: 66px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: baseline; // stretch(por defecto) | flex-start | flex-end | center | baseline 
+        gap: 24px;
+
+        h3 {
+            font-weight: 500; // 200, 300, normal(400), 500, 600, bold(700), 800, 900 
+            font-size: 24px;
+            color: v.$black;
+        }
+
+        p {
+            font-size: 18px;
+            padding: 8px 0px;
+        }
+
+    }
+}

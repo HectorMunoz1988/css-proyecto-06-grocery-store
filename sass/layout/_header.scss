@@ -1,0 +1,59 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+
+
+header {
+    padding: 30px 0px;
+
+    .title{
+        display: flex;
+        justify-content: space-between; // flex-start(por defecto) | flex-end | center | space-between | space-around | space-evenly 
+        align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline 
+
+        ul {
+            list-style: none; // elimina el marcador "•" de la lista 
+            display: flex;
+            align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline 
+            gap: 56px;
+
+            a {
+                text-decoration: none; // elimina el subrayado 
+                font-size: 18px;
+                color: v.$grey; 
+
+                &:not(.link):not(.btn) {
+                    &.active, &:hover {
+                        color: v.$orange;
+                        position: relative;
+
+                        &::before {
+                            content: ""; // → | ✓ | ✔ | ★ | • | › | » | ✕  | ✦ | ⚠️ | 🔥 | ⭐ | 📌 | ❗ | 🔒 | 🔓 | 🔔 | 🛠️ | 📝 | 📎 | 📊 | Texto 
+                            display: block; // block | inline | inline-block | flex | grid | none | inline-flex | inline-grid | table | etc 
+                            width: 80%; // 200px | 10em | 5rem | 75% 
+                            height: 3px;
+                            background-color: v.$orange;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 10%;
+
+                        }
+                    }
+                }
+
+                &.link {
+                    color: v.$orange;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: v.$yellow;
+                    }
+                }
+
+                &.btn {
+                    color: white;
+                }
+            }
+        }
+    }
+}

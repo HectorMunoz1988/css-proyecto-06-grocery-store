@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as v;
+
+html {
+  font-family: v.$primary-font;
+  color: v.$grey;
+}
+
+h1 {
+  font-family: v.$title-font;
+  color: v.$black;
+}

@@ -1,0 +1,57 @@
+
+@use 'variables' as v;
+
+@mixin breakpoint($bp) {
+    @if $bp == tablet {
+        @media (min-width: v.$bp-tablet) {              // 768px
+            @content;
+        }
+    }
+
+    @else if $bp == tablethorizontal {
+        @media (min-width: v.$bp-tablet-horizontal) {   // 1024px
+            @content;
+        }
+    }
+
+    @else if $bp == desktop {
+        @media (min-width: v.$bp-desktop) {             // 1200px
+            @content;
+        }
+    }
+
+    @else if $bp == desktopxl {
+        @media (min-width: v.$bp-desktop-xl) {          // 1440px
+            @content;
+        }
+    }
+
+    @else {
+        @error "El breakpoint `#{$bp}` no existe.";
+    }
+}
+
+@mixin button() {
+    display: inline-block;
+    background-color: v.$orange;
+    padding: 17px 40px;
+    color: white;
+    border-radius: 16px;
+
+    &:hover {
+        background-color: v.$yellow;
+    }
+}
+
+@mixin button() {
+    display: inline-block;
+    background-color: v.$orange;
+    padding: 17px 40px;
+    color: white;
+    border-radius: 16px;
+
+    &:hover {
+    background-color: v.$yellow;
+    }
+    
+}
